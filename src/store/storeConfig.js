@@ -3,8 +3,12 @@ import { createStore, combineReducers } from 'redux';
 
 const reducers = combineReducers({
     numeros: function(state, action)  {
-        // console.log('Numeros -> ',state, action)
         switch(action.type){
+            case 'NUM_MAX_ALTERADO':
+                return {
+                    ...state,
+                    max: action.payload
+                }
             case 'NUM_MIN_ALTERADO':
                 return {
                     ...state,
